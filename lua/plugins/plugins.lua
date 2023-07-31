@@ -10,6 +10,18 @@ return {
   -- telescope-live-grep-args.nvim 可指定参数的文本搜索
   {
     "nvim-telescope/telescope-live-grep-args.nvim",
+    keys = {
+      {
+        "<leader>sl",
+        "<Cmd> lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+        desc = "Live grep args",
+      },
+      {
+        "<leader>/",
+        "<Cmd> lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+        desc = "Live grep args",
+      },
+    },
     config = function()
       require("telescope").load_extension("live_grep_args")
     end,
@@ -78,7 +90,8 @@ return {
     },
     keys = {
       { "<leader>ha", "<Cmd>lua require('harpoon.mark').add_file()<CR>", desc = "Add file" },
-      { "<leader>hm", "<Cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", desc = "Toggle Menu" },
+      -- { "<leader>hm", "<Cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", desc = "Toggle Menu" },
+      { "<leader>hm", "<Cmd> Telescope harpoon marks <CR>", desc = "Telescope Harpoon" },
       { "<leader>hj", "<Cmd>lua require('harpoon.ui').nav_next()<CR>", desc = "Next" },
       { "<leader>hk", "<Cmd>lua require('harpoon.ui').nav_prev()<CR>", desc = "Prev" },
       { "<leader>hr", "<Cmd>lua require('harpoon.mark').rm_file()<CR>", desc = "Remove file" },
