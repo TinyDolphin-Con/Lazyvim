@@ -191,6 +191,9 @@ map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
+-- lspconfig
+map("n", "gsh", "<Cmd> ClangdSwitchSourceHeader <CR>", { desc = "Switch Source Header" })
+
 -- mini.surround 符号
 -- 新增符号：gza
 -- 删除符号：gzd
