@@ -101,4 +101,50 @@ return {
       require("telescope").load_extension("harpoon")
     end,
   },
+
+  -- anuvyklack/windows.nvim 窗口最大化
+  {
+    "anuvyklack/windows.nvim",
+    cmd = { "WindowsMaximize", "WindowsMaximizeVertically", "WindowsMaximizeHorizontally", "WindowsEqualize" },
+    dependencies = {
+      "anuvyklack/middleclass",
+      "anuvyklack/animation.nvim",
+    },
+    keys = {
+      {
+        "<C-w>z",
+        "<Cmd>WindowsMaximize<CR>",
+        desc = "Windows maximize",
+      },
+      {
+        "<C-w>-",
+        "<Cmd>WindowsMaximizeVertically<CR>",
+        desc = "Windows maximize vertically",
+      },
+      {
+        "<C-w>\\",
+        "<Cmd>WindowsMaximizeHorizontally<CR>",
+        desc = "Windows maximize horizontally",
+      },
+      {
+        "<C-w>=",
+        "<Cmd>WindowsEqualize<CR>",
+        desc = "Windows equalize",
+      },
+    },
+    config = function()
+      vim.o.winwidth = 10
+      vim.o.winminwidth = 10
+      vim.o.equalalways = false
+      require("windows").setup()
+    end,
+  },
+  -- 当前窗口紫色边框
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    event = "WinNew",
+    config = function()
+      require("colorful-winsep").setup()
+    end,
+  },
 }
