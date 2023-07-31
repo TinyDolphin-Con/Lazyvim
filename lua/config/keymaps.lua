@@ -30,6 +30,8 @@ vim.keymap.del({ "n" }, "<leader>w-")
 vim.keymap.del({ "n" }, "<leader>w|")
 vim.keymap.del({ "n" }, "<leader>-")
 vim.keymap.del({ "n" }, "<leader>|")
+vim.keymap.del({ "n" }, "<leader>ft")
+vim.keymap.del({ "n" }, "<leader>fT")
 
 ----------------------------
 ----- 通用设置 general -----
@@ -61,11 +63,11 @@ map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 -- 向下翻转半页并居中（:set scrolloff=999）
-map("n", "<C-d>", "<C-d>zz", { nowait = true, noremap = true, silent = true })
-map("n", "<C-u>", "<C-u>zz", { nowait = true, noremap = true, silent = true })
+-- map("n", "<C-d>", "<C-d>zz", { nowait = true, noremap = true, silent = true })
+-- map("n", "<C-u>", "<C-u>zz", { nowait = true, noremap = true, silent = true })
 -- 向下翻转整页并居中（:set scrolloff=999）
-map("n", "<C-f>", "<C-f>zz", { nowait = true, noremap = true, silent = true })
-map("n", "<C-b>", "<C-b>zz", { nowait = true, noremap = true, silent = true })
+-- map("n", "<C-f>", "<C-f>zz", { nowait = true, noremap = true, silent = true })
+-- map("n", "<C-b>", "<C-b>zz", { nowait = true, noremap = true, silent = true })
 
 -- n 始终向后搜索，N 始终向前搜索
 -- taken from https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
@@ -143,11 +145,12 @@ map({ "i" }, "<C-l>", "<Right>", { nowait = true, noremap = true, silent = true,
 map({ "i" }, "<C-j>", "<Down>", { nowait = true, noremap = true, silent = true, desc = "Move down" })
 map({ "i" }, "<C-k>", "<Up>", { nowait = true, noremap = true, silent = true, desc = "Move up" })
 -- 向后移动一个单词
-map({ "i" }, "<C-w>", "<C-o>w", { nowait = true, noremap = true, silent = true, desc = "Move a word" })
+-- map({ "i" }, "<C-f>", "<C-o>w", { nowait = true, noremap = true, silent = true, desc = "Move a word" })
 -- 删除当前行
 map({ "i" }, "<C-d>", "<C-o>dd", { nowait = true, noremap = true, silent = true, desc = "Delete current line" })
 -- 向后删除
 map({ "i" }, "<C-x>", "<Delete>", { nowait = true, noremap = true, silent = true, desc = "Backward belete" })
+
 -- 使当前行居中
 map({ "i" }, "<C-z>", "<C-o>zz", { nowait = true, noremap = true, silent = true, desc = "Backward belete" })
 
