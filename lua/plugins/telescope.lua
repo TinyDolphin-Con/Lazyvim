@@ -1,4 +1,46 @@
 return {
+  -- telescope-vim-bookmarks.nvim 书签搜索
+  {
+    "tom-anders/telescope-vim-bookmarks.nvim",
+    config = function()
+      require("telescope").load_extension("vim_bookmarks")
+      require("telescope").load_extension("noice")
+    end,
+  },
+  -- telescope-live-grep-args.nvim 可指定参数的文本搜索
+  {
+    "nvim-telescope/telescope-live-grep-args.nvim",
+    keys = {
+      {
+        "<leader>sl",
+        "<Cmd> lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+        desc = "Live grep args",
+      },
+      {
+        "<leader>/",
+        "<Cmd> lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+        desc = "Live grep args",
+      },
+    },
+    config = function()
+      require("telescope").load_extension("live_grep_args")
+    end,
+  },
+  -- telescope-ui-select.nvim 搜索和选择
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    config = function()
+      require("telescope").load_extension("ui-select")
+    end,
+  },
+  -- telescope-fzf-native.nvim 模糊查询
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
+    config = function()
+      require("telescope").load_extension("fzf")
+    end,
+  },
   {
     "nvim-telescope/telescope.nvim",
     opts = {

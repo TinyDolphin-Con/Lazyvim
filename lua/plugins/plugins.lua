@@ -1,38 +1,4 @@
 return {
-  -- telescope-vim-bookmarks.nvim 书签搜索
-  {
-    "tom-anders/telescope-vim-bookmarks.nvim",
-    config = function()
-      require("telescope").load_extension("vim_bookmarks")
-      require("telescope").load_extension("noice")
-    end,
-  },
-  -- telescope-live-grep-args.nvim 可指定参数的文本搜索
-  {
-    "nvim-telescope/telescope-live-grep-args.nvim",
-    keys = {
-      {
-        "<leader>sl",
-        "<Cmd> lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-        desc = "Live grep args",
-      },
-      {
-        "<leader>/",
-        "<Cmd> lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-        desc = "Live grep args",
-      },
-    },
-    config = function()
-      require("telescope").load_extension("live_grep_args")
-    end,
-  },
-  -- telescope-ui-select.nvim 搜索和选择
-  {
-    "nvim-telescope/telescope-ui-select.nvim",
-    config = function()
-      require("telescope").load_extension("ui-select")
-    end,
-  },
   -- s1n7ax/nvim-window-picker 窗口选择
   {
     "s1n7ax/nvim-window-picker",
@@ -60,7 +26,6 @@ return {
       },
     },
   },
-
   -- MattesGroeger/vim-bookmarks 书签
   {
     "MattesGroeger/vim-bookmarks",
@@ -80,7 +45,6 @@ return {
       vim.g.bookmark_no_default_key_mappings = 1
     end,
   },
-
   -- ThePrimeagen/harpoon 文件收藏夹
   {
     "ThePrimeagen/harpoon",
@@ -101,7 +65,6 @@ return {
       require("telescope").load_extension("harpoon")
     end,
   },
-
   -- anuvyklack/windows.nvim 窗口最大化
   {
     "anuvyklack/windows.nvim",
@@ -145,6 +108,24 @@ return {
     event = "WinNew",
     config = function()
       require("colorful-winsep").setup()
+    end,
+  },
+  -- diffview
+  {
+    "sindrets/diffview.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("diffview").setup({
+        view = {
+          default = {
+            winbar_info = true,
+          },
+          file_history = {
+            winbar_info = true,
+          },
+        },
+      })
     end,
   },
 }
