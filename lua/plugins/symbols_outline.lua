@@ -27,7 +27,7 @@ return {
           close = { "<Esc>", "q" },
           goto_location = "<Cr>",
           focus_location = "o",
-          hover_symbol = "<C-space>",
+          hover_symbol = "<space>",
           toggle_preview = "K",
           rename_symbol = "r",
           code_actions = "a",
