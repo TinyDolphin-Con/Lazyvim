@@ -100,7 +100,7 @@ opt.foldlevel = 99
 -- 设置代码折叠的最小行数
 opt.foldminlines = 3
 -- 在左边增加一列显示折叠栏
-opt.foldcolumn = "3"
+-- opt.foldcolumn = "3"
 
 -- 使用空格而非制表符
 opt.expandtab = true
