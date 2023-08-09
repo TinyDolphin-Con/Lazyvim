@@ -128,4 +128,19 @@ return {
       })
     end,
   },
+  -- nvim-spectre 替换增强
+  {
+    "nvim-pack/nvim-spectre",
+    cmd = "Spectre",
+    opts = { open_cmd = "noswapfile vnew" },
+    keys = {
+      {
+        "<leader>sr",
+        function()
+          require("spectre").open_file_search()
+        end,
+        desc = "Replace on current file (Spectre)",
+      },
+    },
+  },
 }
