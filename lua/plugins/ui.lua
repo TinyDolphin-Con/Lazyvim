@@ -32,7 +32,7 @@ return {
           },
         },
         -- enable this to exit Neovim when only edgy windows are left
-        exit_when_last = true,
+        exit_when_last = false,
         -- close edgy when all windows are hidden instead of opening one of them
         -- disable to always keep at least one edgy split visible in each open section
         close_when_all_hidden = true,
