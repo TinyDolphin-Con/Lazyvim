@@ -136,3 +136,6 @@ opt.timeoutlen = 300
 opt.ttimeoutlen = 200
 -- 屏幕重绘时间（默认 1000）
 opt.redrawtime = 1500
+
+-- 当使用命令行时，总是报告文件有几行被修改过
+opt.report = 0

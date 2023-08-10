@@ -23,3 +23,40 @@ vim.api.nvim_create_autocmd({ "BufLeave", "InsertEnter" }, {
     vim.opt_local.relativenumber = false
   end,
 })
+
+-- 打开文件时，返回到最后的编辑位置并且居中显示
+vim.api.nvim_create_autocmd("BufReadPost", {
+  group = augroup("LastEditPosition"),
+  callback = function()
+    vim.cmd(
+      [[ if line("'\"") > 0 && line("'\"") <= line("$") | execute 'silent! ' . line("'\"") . 'foldopen!' | execute 'normal! ' . line("'\"") . 'Gzz' | endif ]]
+    )
+  end,
+})
+
+-- 保存时删除末尾空白
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = augroup("DeleteTrailingWhiteSpace"),
+  callback = function()
+    vim.cmd([[ :%s/\s\+$//e ]])
+  end,
+})
+
+-- 配置 C++ 注释风格
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("CPPCommentStyle"),
+  pattern = { "c", "cpp" },
+  callback = function()
+    vim.cmd([[ set commentstring=//\ %s ]])
+  end,
+})
+
+-- 配置 Python 注释风格
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("PythonCommentStyle"),
+  pattern = { "python" },
+  callback = function()
+    vim.cmd([[ set commentstring=# %s ]])
+    vim.cmd([[ syn keyword pythonDecorator True None False self ]])
+  end,
+})
