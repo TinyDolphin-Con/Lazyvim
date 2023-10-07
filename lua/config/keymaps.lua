@@ -131,7 +131,7 @@ map({ "n", "x" }, "<", "<gv", { nowait = true, noremap = true, silent = true })
 
 -- p 复制时，不拷贝当前选中内容（P 也能满足）
 map(
-  { "n", "x" },
+  { "x" },
   "p",
   'p:let @+=@0<CR>:let @"=@0<CR>',
   { nowait = true, noremap = true, silent = true, desc = "Dont copy replaced text" }
@@ -192,7 +192,7 @@ map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 -- lspconfig
-map("n", "gsh", "<Cmd> ClangdSwitchSourceHeader <CR>", { desc = "Switch Source Header" })
+-- map("n", "gsh", "<Cmd> ClangdSwitchSourceHeader <CR>", { desc = "Switch Source Header" })
 
 -- mini.surround 符号
 -- 新增符号：gza
@@ -202,7 +202,7 @@ map("n", "gsh", "<Cmd> ClangdSwitchSourceHeader <CR>", { desc = "Switch Source H
 -- 查找符号：gzf
 
 -- nvim-spectre
--- 开启替换：<leadersr>
+-- 开启替换：<leader>sr
 
 -- telescope.nvim 强大的搜索
 -- <leader>,  : 搜索所有活动的 buffer
