@@ -126,8 +126,8 @@ map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
 
 -- 缩进后，继续选中内容
-map({ "n", "x" }, ">", ">gv", { nowait = true, noremap = true, silent = true })
-map({ "n", "x" }, "<", "<gv", { nowait = true, noremap = true, silent = true })
+map({ "x" }, ">", ">gv", { nowait = true, noremap = true, silent = true })
+map({ "x" }, "<", "<gv", { nowait = true, noremap = true, silent = true })
 
 -- p 复制时，不拷贝当前选中内容（P 也能满足）
 map(
