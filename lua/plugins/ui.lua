@@ -188,14 +188,4 @@ return {
   --   end,
   -- },
   -- tokyonight transparent 主题透明
-  {
-    "folke/tokyonight.nvim",
-    opts = {
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-    },
-  },
 }

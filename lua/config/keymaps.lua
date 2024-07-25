@@ -22,23 +22,23 @@ end
 ----------------------------
 ------ Unmap mapping -------
 ----------------------------
-vim.keymap.del({ "n", "i", "v" }, "<A-j>")
-vim.keymap.del({ "n", "i", "v" }, "<A-k>")
-vim.keymap.del({ "n" }, "<leader>ww")
-vim.keymap.del({ "n" }, "<leader>wd")
-vim.keymap.del({ "n" }, "<leader>w-")
-vim.keymap.del({ "n" }, "<leader>w|")
-vim.keymap.del({ "n" }, "<leader>-")
-vim.keymap.del({ "n" }, "<leader>|")
-vim.keymap.del({ "n" }, "<leader>ft")
-vim.keymap.del({ "n" }, "<leader>fT")
+-- vim.keymap.del({ "n", "i", "v" }, "<A-j>")
+-- vim.keymap.del({ "n", "i", "v" }, "<A-k>")
+-- vim.keymap.del({ "n" }, "<leader>ww")
+-- vim.keymap.del({ "n" }, "<leader>wd")
+-- vim.keymap.del({ "n" }, "<leader>w-")
+-- vim.keymap.del({ "n" }, "<leader>w|")
+-- vim.keymap.del({ "n" }, "<leader>-")
+-- vim.keymap.del({ "n" }, "<leader>|")
+-- vim.keymap.del({ "n" }, "<leader>ft")
+-- vim.keymap.del({ "n" }, "<leader>fT")
 
 ----------------------------
 ----- 通用设置 general -----
 ----------------------------
 
 -- 快速保存
-map({ "n" }, "W", ":w<CR>zz", { nowait = true, noremap = true, silent = true })
+map({ "n" }, "W", ":w<CR>", { nowait = true, noremap = true, silent = true })
 -- 快速退出
 map({ "n" }, "Q", ":q<CR>", { nowait = true, noremap = true, silent = true })
 -- 快速保存并退出
@@ -61,6 +61,8 @@ map(
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- map({ "n", "x" }, "J", "5j", { nowait = true, noremap = true, silent = true })
+-- map({ "n", "x" }, "K", "5k", { nowait = true, noremap = true, silent = true })
 
 -- 向下翻转半页并居中（:set scrolloff=999）
 -- map("n", "<C-d>", "<C-d>zz", { nowait = true, noremap = true, silent = true })
