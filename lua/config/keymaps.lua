@@ -48,7 +48,7 @@ map({ "n" }, "qa", ":wqa<CR>", { nowait = true, noremap = true, silent = true })
 -- 快速保存（修改时保存）并退出所有窗口
 map({ "n" }, "qx", ":xa<CR>", { nowait = true, noremap = true, silent = true })
 
--- 选中全文（普通模式、可视模式和选择模式）
+-- 选中全文（普通模式、可视模式和选择模式）偶尔不起作用
 map({ "n", "x" }, "VV", "<Esc>gg0vG$<CR>", { nowait = true, noremap = true, silent = true })
 -- Clear search, diff update and redraw
 -- taken from runtime/lua/_editor.lua
