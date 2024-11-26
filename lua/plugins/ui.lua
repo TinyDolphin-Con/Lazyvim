@@ -187,5 +187,4 @@ return {
   --     return opts
   --   end,
   -- },
-  -- tokyonight transparent 主题透明
 }
