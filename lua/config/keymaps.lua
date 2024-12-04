@@ -142,10 +142,10 @@ map(
 -- 插入模式中：快速移动
 map({ "i" }, "<C-q>", "<ESC>^i", { nowait = true, noremap = true, silent = true, desc = "Begin of line" })
 map({ "i" }, "<C-e>", "<End>", { nowait = true, noremap = true, silent = true, desc = "End of line" })
-map({ "i" }, "<C-h>", "<Left>", { nowait = true, noremap = true, silent = true, desc = "Move left" })
-map({ "i" }, "<C-l>", "<Right>", { nowait = true, noremap = true, silent = true, desc = "Move right" })
-map({ "i" }, "<C-j>", "<Down>", { nowait = true, noremap = true, silent = true, desc = "Move down" })
-map({ "i" }, "<C-k>", "<Up>", { nowait = true, noremap = true, silent = true, desc = "Move up" })
+-- map({ "i" }, "<C-h>", "<Left>", { nowait = true, noremap = true, silent = true, desc = "Move left" })
+-- map({ "i" }, "<C-l>", "<Right>", { nowait = true, noremap = true, silent = true, desc = "Move right" })
+-- map({ "i" }, "<C-j>", "<Down>", { nowait = true, noremap = true, silent = true, desc = "Move down" })
+-- map({ "i" }, "<C-k>", "<Up>", { nowait = true, noremap = true, silent = true, desc = "Move up" })
 -- 向后移动一个单词
 -- map({ "i" }, "<C-f>", "<C-o>w", { nowait = true, noremap = true, silent = true, desc = "Move a word" })
 -- 删除当前行
@@ -155,6 +155,9 @@ map({ "i" }, "<C-x>", "<Delete>", { nowait = true, noremap = true, silent = true
 
 -- 使当前行居中
 map({ "i" }, "<C-z>", "<C-o>zz", { nowait = true, noremap = true, silent = true, desc = "Backward belete" })
+
+-- 插入模式中,临时进入普通普通模式执行指定命令
+map({ "i" }, ";;", "<C-o>", { nowait = true, noremap = true, silent = true, desc = "Normal mode single operation" })
 
 ----------------------------
 ----- 插件相关 plugins -----
@@ -171,15 +174,15 @@ end
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 
 -- floating terminal
-local lazyterm = function()
-  Util.float_term(nil, { cwd = Util.get_root() })
-end
-map("n", "<C-/>", lazyterm, { desc = "Terminal (root dir)" })
-map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+-- local lazyterm = function()
+--   Util.float_term(nil, { cwd = Util.get_root() })
+-- end
+-- map("n", "<C-/>", lazyterm, { desc = "Terminal (root dir)" })
+-- map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 -- map("n", "<leader>tT", function()
 --   Util.float_term()
 -- end, { desc = "Terminal (cwd)" })
-map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+-- map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 -- map("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
 -- map("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
 -- map("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
